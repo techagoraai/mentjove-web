@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Mental</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #6200ea;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            padding: 2rem;
+        }
+        .chat-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .input-container {
+            display: flex;
+            margin-top: 1rem;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4500a0;
+        }
+        .messages {
+            margin-top: 1rem;
+        }
+        .message {
+            margin-bottom: 1rem;
+        }
+        .message.bot {
+            color: #6200ea;
+        }
+        .message.user {
+            text-align: right;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bot Mental</h1>
+    </header>
+    <main>
+        <div class="chat-container">
+            <div id="messages" class="messages">
+                <div class="message bot">Hola, soy tu bot mental. ¿En qué puedo ayudarte?</div>
+            </div>
+            <div class="input-container">
+                <input id="user-input" type="text" placeholder="Escribe tu mensaje aquí...">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const messages = document.getElementById('messages');
+            const userMessage = input.value.trim();
+            
+            if (userMessage) {
+                // Mostrar mensaje del usuario
+                const userDiv = document.createElement('div');
+                userDiv.className = 'message user';
+                userDiv.textContent = userMessage;
+                messages.appendChild(userDiv);
+
+                // Respuesta del bot
+                const botDiv = document.createElement('div');
+                botDiv.className = 'message bot';
+                botDiv.textContent = generarRespuesta(userMessage);
+                messages.appendChild(botDiv);
+
+                input.value = ''; // Limpiar el campo de texto
+                messages.scrollTop = messages.scrollHeight; // Desplazar hacia abajo
+            }
+        }
+
+        function generarRespuesta(mensaje) {
+            const respuestas = [
+                "Eso suena interesante, cuéntame más.",
+                "¿Cómo te hace sentir eso?",
+                "¿Por qué crees que sucede eso?",
+                "Estoy aquí para escucharte. ¿Qué más necesitas?",
+                "Eso es comprensible, ¿qué podemos hacer al respecto?"
+            ];
+            return respuestas[Math.floor(Math.random() * respuestas.length)];
+        }
+    </script>
+</body>
+</html>
+
