@@ -7,114 +7,68 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #fefbe9;
             color: #333;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #6200ea;
-            color: white;
+            background-color: #ffafcc;
+            color: #fff;
             text-align: center;
-            padding: 1rem;
+            padding: 1.5rem;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
         }
         main {
             padding: 2rem;
         }
+        .description {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #555;
+            font-size: 1.2rem;
+        }
         .chat-container {
             max-width: 600px;
             margin: 0 auto;
-            padding: 1rem;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        .input-container {
-            display: flex;
-            margin-top: 1rem;
-        }
-        input[type="text"] {
-            flex: 1;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        button {
-            padding: 0.5rem 1rem;
-            background-color: #6200ea;
+        a {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.2rem;
+            background-color: #ffafcc;
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
         }
-        button:hover {
-            background-color: #4500a0;
-        }
-        .messages {
-            margin-top: 1rem;
-        }
-        .message {
-            margin-bottom: 1rem;
-        }
-        .message.bot {
-            color: #6200ea;
-        }
-        .message.user {
-            text-align: right;
-            color: #333;
+        a:hover {
+            background-color: #ff87ab;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Bot Mental</h1>
+        <h1>🤗 Bot Mental</h1>
     </header>
     <main>
+        <p class="description">
+            Hola, soy tu compañero virtual. Estoy aquí para escucharte, sin juicios ni prisas. 😊
+            Haz clic en el enlace de abajo para hablar conmigo en Telegram. 💬
+        </p>
         <div class="chat-container">
-            <div id="messages" class="messages">
-                <div class="message bot">Hola, soy tu bot mental. ¿En qué puedo ayudarte?</div>
-            </div>
-            <div class="input-container">
-                <input id="user-input" type="text" placeholder="Escribe tu mensaje aquí...">
-                <button onclick="sendMessage()">Enviar</button>
-            </div>
+            <a href="https://t.me/tu_bot_mental" target="_blank">Hablar con el bot en Telegram</a>
         </div>
     </main>
-    <script>
-        function sendMessage() {
-            const input = document.getElementById('user-input');
-            const messages = document.getElementById('messages');
-            const userMessage = input.value.trim();
-            
-            if (userMessage) {
-                // Mostrar mensaje del usuario
-                const userDiv = document.createElement('div');
-                userDiv.className = 'message user';
-                userDiv.textContent = userMessage;
-                messages.appendChild(userDiv);
-
-                // Respuesta del bot
-                const botDiv = document.createElement('div');
-                botDiv.className = 'message bot';
-                botDiv.textContent = generarRespuesta(userMessage);
-                messages.appendChild(botDiv);
-
-                input.value = ''; // Limpiar el campo de texto
-                messages.scrollTop = messages.scrollHeight; // Desplazar hacia abajo
-            }
-        }
-
-        function generarRespuesta(mensaje) {
-            const respuestas = [
-                "Eso suena interesante, cuéntame más.",
-                "¿Cómo te hace sentir eso?",
-                "¿Por qué crees que sucede eso?",
-                "Estoy aquí para escucharte. ¿Qué más necesitas?",
-                "Eso es comprensible, ¿qué podemos hacer al respecto?"
-            ];
-            return respuestas[Math.floor(Math.random() * respuestas.length)];
-        }
-    </script>
 </body>
 </html>
 
