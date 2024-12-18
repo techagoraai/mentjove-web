@@ -33,8 +33,7 @@
         }
         .privacy-warning {
             margin: 2rem auto;
-            max-width: 600px;
-            font-size: 1rem;
+            font-size: 0.75rem;
             color: #444;
             background-color: #fff4e6;
             border: 1px solid #ffd6a5;
@@ -51,7 +50,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        a {
+        .chat-link {
             display: inline-block;
             margin-top: 1.5rem;
             padding: 0.8rem 1.2rem;
@@ -61,6 +60,9 @@
             border-radius: 10px;
             font-size: 1.2rem;
             font-weight: bold;
+        }
+        a {
+            color: #ffd6a5;
         }
         a:hover {
             background-color: #ffa982;
@@ -76,6 +78,9 @@
             Hola, soy tu compañero virtual. Estoy aquí para escucharte, sin juicios ni prisas. 😊
             Haz clic en el enlace de abajo para hablar conmigo en Telegram. 💬
         </p>
+        <div class="chat-container">
+            <a class="chat-link" href="https://t.me/mentjove_bot" target="_blank">Hablar con el bot en Telegram</a>
+        </div>
 
         <!-- Aviso de privacidad -->
         <div class="privacy-warning">
@@ -85,9 +90,6 @@
             No compartas información personal sensible innecesaria. Este bot no sustituye la atención psicológica profesional.
         </div>
 
-        <div class="chat-container">
-            <a href="https://t.me/mentjove_bot" target="_blank">Hablar con el bot en Telegram</a>
-        </div>
     </main>
 </body>
 </html>
