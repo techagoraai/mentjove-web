@@ -1,95 +1,187 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentjove bot</title>
+    <title>Mental Health Chatbot</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fefbe9;
-            color: #333;
             margin: 0;
             padding: 0;
+            background: linear-gradient(to bottom, #eaf4fc, #ffffff);
+            color: #333;
         }
+
         header {
-            background-color: #ffd6a5;
-            color: #fff;
+            background: url('background.jpg') no-repeat center center;
+            color: white;
             text-align: center;
-            padding: 1.5rem;
+            background-size: cover;
+            padding: 3rem 1.5rem;
         }
+
         header h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
-        main {
-            padding: 2rem;
-        }
-        .description {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #555;
+
+        header p {
             font-size: 1.2rem;
         }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .how-it-works, .testimonials, .chatbot-section, .privacy-section, .button-section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            color: #4A90E2;
+            margin-bottom: 1rem;
+        }
+
+        .how-it-works p, .testimonials p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .chatbot-interface {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            border: 2px solid #4A90E2;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .message {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 60%;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .user-bubble {
+            background-color: #0078D4;
+            color: white;
+        }
+
+        .bot-bubble {
+            background-color: #e5e5e5;
+            color: black;
+        }
+
+        .message {
+            max-width: 400px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+
+        .message.user {
+            background-color: #E0F7FA;
+            align-self: flex-end;
+        }
+
+        .message.bot {
+            background-color: #FCE4EC;
+            align-self: flex-start;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            color: white;
+            background-color: #4A90E2;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .button-container a:hover {
+            background-color: #357ABD;
+        }
+
         .privacy-warning {
             margin: 2rem auto;
             font-size: 0.75rem;
             color: #444;
             background-color: #fff4e6;
-            border: 1px solid #ffd6a5;
+            border: 1px solid #357ABD;
             padding: 1rem;
             border-radius: 10px;
             text-align: center;
         }
-        .chat-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 1.5rem;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .chat-link {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.8rem 1.2rem;
-            background-color: #ffd6a5;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        a {
-            color: #ffd6a5;
-        }
-        a:hover {
-            background-color: #ffa982;
-        }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>🤗 Mentjove bot</h1>
+        <h1>Asistente para tu salud mental sobre IA</h1>
+        <p>Un compañero para el bienestar mental</p>
     </header>
-    <main>
-        <p class="description">
-            Hola, soy tu compañero virtual. Estoy aquí para escucharte, sin juicios ni prisas. 😊
-            Haz clic en el enlace de abajo para hablar conmigo en Telegram. 💬
-        </p>
-        <div class="chat-container">
-            <a class="chat-link" href="https://t.me/mentjove_bot" target="_blank">Hablar con el bot en Telegram</a>
-        </div>
 
+    <div class="container">
+        <section class="how-it-works">
+            <h2>Cómo funciona</h2>
+            <p>Nuestro chatbot utiliza inteligencia artificial avanzada para comprender tus preocupaciones y ofrecerte información y recursos útiles para tu camino hacia la salud mental. Es gratuito y está disponible las 24 horas del día, los 7 días de la semana.</p>
+        </section>
+
+        <section class="chatbot-section">
+            <h2>Chatea ahora</h2>
+            <div class="chatbot-interface">
+                <div class="message user">
+                    <div class="message-bubble user-bubble">¡Hola! Me siento estresado/a hoy.</div>
+                </div>
+                <div class="message bot">
+                    <div class="message-bubble bot-bubble">Estoy aquí para ayudarte. ¿Puedes contarme más sobre lo que te está haciendo sentir así?</div>
+                </div>
+                <div class="message user">
+                    <div class="message-bubble user-bubble">Es principalmente la presión del trabajo.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="button-section">
+            <div class="button-container">
+                <a class="chat-link" href="https://t.me/mentjove_bot" target="_blank">Comenzar a chatear</a>
+            </div>
+        </section>
+
+        <section class="privacy-section">
         <!-- Aviso de privacidad -->
         <div class="privacy-warning">
-            ⚠️ <strong>Aviso de privacidad:</strong> Al utilizar este bot, aceptas que tus datos serán tratados únicamente 
-            para fines de consulta inicial y bajo estrictas medidas de seguridad. Puedes leer más en nuestra 
-            <a href="privacy.html" target="_blank">Política de Privacidad</a>. 
+            ⚠️ <strong>Aviso de privacidad:</strong> Al utilizar este bot, aceptas que tus datos serán tratados únicamente
+            para fines de consulta inicial y bajo estrictas medidas de seguridad. Puedes leer más en nuestra
+            <a href="privacy.html" target="_blank">Política de Privacidad</a>.
             No compartas información personal sensible innecesaria. Este bot no sustituye la atención psicológica profesional.
         </div>
-
-    </main>
+        </section>
+    </div>
 </body>
 </html>
+
